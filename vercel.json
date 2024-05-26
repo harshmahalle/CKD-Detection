@@ -1,16 +1,21 @@
 {
-    "version":2,
+    "version": 2,
     "builds": [
         {
-            "src":"./index.py",
+            "src": "./index.py",
             "use": "@vercel/python",
-            "config":{"runtime":"python3.8"}
+            "config": {
+                "runtime": "python3.8",
+                "build": {
+                    "env": {"PIP_USE_FEATURE": "2020-resolver"}
+                }
+            }
         }
     ],
     "routes": [
         {
-            "src":"/(.*)",
-            "dest":"/"
+            "src": "/(.*)",
+            "dest": "/"
         }
     ]
 }
